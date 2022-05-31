@@ -114,7 +114,8 @@ class QueryJdslTest @Autowired constructor(
         val penaltyIds = queryFactory.selectQuery<Long> {
             select(col(Penalty::memberId))
             from(entity(Penalty::class))
-        }.resultList
+        }
+            .resultList
 
         queryFactory.selectQuery<Team> {
             select(entity(Team::class))
